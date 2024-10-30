@@ -1,0 +1,10 @@
+CREATE DATABASE db_backend_4992; 
+
+USE db_backend_4992;
+
+CREATE TABLE user (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
