@@ -22,7 +22,7 @@
                 <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
                 <input type="password" id="password" name="password" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300">
             </div>
-            <button type="submit" class="w-full bg-purple-600 text-white p-2 rounded-md hover:bg-red-700">Register</button>
+            <button type="submit" class="w-full bg-purple-600 text-white p-2 rounded-md hover:bg-purple-700">Register</button>
         </form>
         <p class="mt-4 text-center">Sudah punya akun? <a href="login.php" class="text-purple-600">Login di sini</a></p>
     </div>

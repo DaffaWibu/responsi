@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="flex h-screen w-full">
 
         <!-- Bagian kiri (sidebar) -->
-        <div class="hidden md:flex md:w-1/2 bg-cover bg-center text-white flex-col justify-center items-center p-12" style="background-image: url('logo.jpg')">
+        <div class="hidden md:flex md:w-1/2 bg-cover bg-center text-white flex-col justify-center items-center p-12" style="background-image: url('wibu.jpg')">
             <h1 class="text-5xl font-bold mb-4">Halo Selamat Datang!</h1>
             <p class="text-xl">Harap login terlebih dahulu.</p>
             <p class="mt-6 text-sm opacity-75">Semoga anda terbantu dengan web yang saya buat.</p>

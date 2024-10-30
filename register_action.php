@@ -26,7 +26,7 @@ if (!empty($nama) && !empty($username) && !empty($password)) {
 
         // Eksekusi query
         if ($stmt->execute()) {
-            $success_message = "Pendaftaran berhasil! Silakan <a href='login.php' class='text-red-600 underline'>login</a>.";
+            $success_message = "Pendaftaran berhasil! Silakan <a href='login.php' class='text-purple-600 underline'>login</a>.";
         } else {
             $error_message = "Pendaftaran gagal: " . $stmt->error;
         }
@@ -52,7 +52,7 @@ $conn->close();
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold text-center text-red-600 mb-6">Pendaftaran Akun</h1>
+        <h1 class="text-2xl font-bold text-center text-purple-600 mb-6">Pendaftaran Akun</h1>
 
         <!-- Menampilkan pesan error atau sukses -->
         <?php if (isset($error_message)): ?>
@@ -75,11 +75,11 @@ $conn->close();
                 <label class="block text-gray-700 text-sm font-medium mb-1" for="password">Password</label>
                 <input class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" type="password" name="password" id="password" placeholder="Masukkan Password" required />
             </div>
-            <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-red-700 transition duration-200">Daftar</button>
+            <button type="submit" class="w-full bg-purple-700 text-white py-3 rounded-lg text-lg font-semibold hover:bg-purple-500 transition duration-200">Daftar</button>
         </form>
 
         <p class="mt-4 text-center text-sm">
-            Sudah punya akun? <a href="login.php" class="text-red-600 underline">Login di sini</a>
+            Sudah punya akun? <a href="login.php" class="text-purple-600 underline">Login di sini</a>
         </p>
     </div>
 </body>
