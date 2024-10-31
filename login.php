@@ -14,6 +14,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
+    // Cek jika username dan password adalah 'dosen'
+    if ($username === 'dosen' && $password === 'dosen') {
+        $_SESSION['username'] = 'dosen';
+        $_SESSION['status'] = "login";
+        header("Location: dashboard_dosen.php");
+        exit();
+    }
+
     // Cek username dan password di database untuk pengguna biasa
     $stmt = $conn->prepare("SELECT * FROM user WHERE username = ?");
     $stmt->bind_param("s", $username);
@@ -60,32 +68,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <!-- Bagian kanan (form login) -->
-<div class="flex items-center justify-center w-full md:w-1/2 bg-white p-12">
-    <div class="w-full max-w-md">
-        <h2 class="text-4xl font-semibold text-center mb-6">Masukan akun anda!</h2>
-        <form method="POST" class="space-y-4">
-            <div>
-                <label class="block text-gray-700 text-lg font-medium mb-2" for="username">Username</label>
-                <input class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" name="username" id="username" placeholder="Masukan Username" required />
-            </div>
-            <div>
-                <label class="block text-gray-700 text-lg font-medium mb-2" for="password">Password</label>
-                <input class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="password" name="password" id="password" placeholder="Masukan password" required />
-            </div>
-            <button type="submit" class="w-full bg-purple-600 text-white py-4 rounded-lg text-lg font-semibold hover:bg-purple-700 transition duration-200">Login</button>
-        </form>
+        <div class="flex items-center justify-center w-full md:w-1/2 bg-white p-12">
+            <div class="w-full max-w-md">
+                <h2 class="text-4xl font-semibold text-center mb-6">Masukan akun anda!</h2>
+                <form method="POST" class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 text-lg font-medium mb-2" for="username">Username</label>
+                        <input class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" name="username" id="username" placeholder="Masukan Username" required />
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-lg font-medium mb-2" for="password">Password</label>
+                        <input class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="password" name="password" id="password" placeholder="Masukan password" required />
+                    </div>
+                    <button type="submit" class="w-full bg-purple-600 text-white py-4 rounded-lg text-lg font-semibold hover:bg-purple-700 transition duration-200">Login</button>
+                </form>
 
-        <!-- Menampilkan pesan error jika login gagal -->
-        <?php if (isset($error_message)): ?>
-            <p class="text-red-500 mt-4 text-center"><?= $error_message ?></p>
-        <?php endif; ?>
+                <!-- Menampilkan pesan error jika login gagal -->
+                <?php if (isset($error_message)): ?>
+                    <p class="text-red-500 mt-4 text-center"><?= $error_message ?></p>
+                <?php endif; ?>
 
-        <!-- Tautan ke halaman registrasi -->
-        <p class="mt-4 text-center">
-            Belum punya akun? <a href="register.php" class="text-purple-600 hover:underline">Daftar di sini</a>
-        </p>
+                <!-- Tautan ke halaman registrasi -->
+                <p class="mt-4 text-center">
+                    Belum punya akun? <a href="register.php" class="text-purple-600 hover:underline">Daftar di sini</a>
+                </p>
+            </div>
+        </div>
+
     </div>
-</div>
-
 </body>
 </html>
